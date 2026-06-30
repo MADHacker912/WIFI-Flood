@@ -119,10 +119,10 @@ sudo apt install python3 python3-pip wireless-tools aircrack-ng -y
 sudo pip3 install scapy
 
 # 3. Download the script
-# Save fakeap_flood.py from the source
+# Save wififlood.py from the source
 
 # 4. Make it executable
-chmod +x fakeap_flood.py
+chmod +x wififlood.py
 ```
 
 ---
@@ -137,7 +137,7 @@ sudo airmon-ng check kill
 sudo airmon-ng start wlan0
 
 # 3. Run beacon flood
-sudo python3 fakeap_flood.py -i wlan0mon -n 500
+sudo python3 wififlood.py -i wlan0mon -n 500
 
 # 4. Press Ctrl+C to stop
 
@@ -153,7 +153,7 @@ sudo systemctl restart NetworkManager
 ### Command-Line Arguments
 
 ```
-usage: fakeap_flood.py [-h] [-i INTERFACE] [-n NUM_APS] [--interval INTERVAL]
+usage: wififlood.py [-h] [-i INTERFACE] [-n NUM_APS] [--interval INTERVAL]
                        [--threads THREADS] [--fast] [--no-wpa2] [--5ghz]
                        [--channels CHANNELS [CHANNELS ...]] [--ssids SSIDS]
                        [--list-ifaces] [--output OUTPUT]
@@ -177,12 +177,12 @@ options:
 
 **Basic beacon flood:**
 ```bash
-sudo python3 fakeap_flood.py -i wlan0mon -n 500
+sudo python3 wififlood.py -i wlan0mon -n 500
 ```
 
 **Maximum throughput:**
 ```bash
-sudo python3 fakeap_flood.py -i wlan0mon -n 1000 --fast --interval 0.0001
+sudo python3 wififlood.py -i wlan0mon -n 1000 --fast --interval 0.0001
 ```
 
 **Custom SSID list:**
@@ -197,27 +197,27 @@ Office_5G
 EOF
 
 # Run with custom SSIDs
-sudo python3 fakeap_flood.py -i wlan0mon -n 200 --ssids my_ssids.txt
+sudo python3 wififlood.py -i wlan0mon -n 200 --ssids my_ssids.txt
 ```
 
 **Specific channels:**
 ```bash
-sudo python3 fakeap_flood.py -i wlan0mon -n 300 -c 1 6 11
+sudo python3 wififlood.py -i wlan0mon -n 300 -c 1 6 11
 ```
 
 **Include 5 GHz:**
 ```bash
-sudo python3 fakeap_flood.py -i wlan0mon -n 500 --5ghz
+sudo python3 wififlood.py -i wlan0mon -n 500 --5ghz
 ```
 
 **Export AP database only:**
 ```bash
-sudo python3 fakeap_flood.py -i wlan0mon -n 1000 --output my_aps.json
+sudo python3 wififlood.py -i wlan0mon -n 1000 --output my_aps.json
 ```
 
 **List available interfaces:**
 ```bash
-sudo python3 fakeap_flood.py --list-ifaces
+sudo python3 wififlood.py --list-ifaces
 ```
 
 ---
