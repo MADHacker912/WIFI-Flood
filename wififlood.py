@@ -445,25 +445,25 @@ def main():
         epilog="""
 Examples:
   # Basic beacon flood with default settings
-  sudo python3 fakeap_flood.py -i wlan0mon -n 500
+  sudo python3 wififlood.py -i wlan0mon -n 500
 
   # Fast mode - high throughput, single thread
-  sudo python3 fakeap_flood.py -i wlan0mon -n 1000 --fast
+  sudo python3 wififlood.py -i wlan0mon -n 1000 --fast
 
   # Custom SSID pool from file
-  sudo python3 fakeap_flood.py -i wlan0mon --ssids my_ssids.txt
+  sudo python3 wififlood.py -i wlan0mon --ssids my_ssids.txt
 
   # Use specific channels (2.4 GHz)
-  sudo python3 fakeap_flood.py -i wlan0mon -c 1 6 11
+  sudo python3 wififlood.py -i wlan0mon -c 1 6 11
 
   # Include 5 GHz channels
-  sudo python3 fakeap_flood.py -i wlan0mon --5ghz
+  sudo python3 wififlood.py -i wlan0mon --5ghz
 
   # Minimal interval for maximum rate (use with caution!)
-  sudo python3 fakeap_flood.py -i wlan0mon -n 500 --interval 0.00001
+  sudo python3 wififlood.py -i wlan0mon -n 500 --interval 0.00001
 
   # Just list interfaces and exit
-  sudo python3 fakeap_flood.py --list-ifaces
+  sudo python3 wififlood.py --list-ifaces
         """
     )
     
