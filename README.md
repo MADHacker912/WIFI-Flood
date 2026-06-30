@@ -298,12 +298,12 @@ sudo pip3 install scapy
 
 ### "Operation not permitted"
 ```bash
-sudo python3 fakeap_flood.py -i wlan0mon -n 500
+sudo python3 wififlood.py -i wlan0mon -n 500
 ```
 
 ### Interface not found
 ```bash
-sudo python3 fakeap_flood.py --list-ifaces
+sudo python3 wififlood.py --list-ifaces
 ip link show
 iw dev
 ```
@@ -321,7 +321,7 @@ sudo ip link set wlan0 up
 ### Low frame rate
 ```bash
 # Try fast mode
-sudo python3 fakeap_flood.py -i wlan0mon -n 500 --fast --interval 0.0001
+sudo python3 wififlood.py -i wlan0mon -n 500 --fast --interval 0.0001
 
 # Check driver
 lsmod | grep -E "ath|rtl|mt76"
