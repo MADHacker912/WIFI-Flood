@@ -116,7 +116,7 @@ sudo apt update
 sudo apt install python3 python3-pip wireless-tools aircrack-ng -y
 
 # 2. Install Scapy
-sudo pip3 install scapy
+sudo apt install python3-scrapy
 
 # 3. Download the script
 # Save wififlood.py from the source
